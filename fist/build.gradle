@@ -7,3 +7,42 @@ dependencies {
     implementation gradleApi()
 }
 
+publishing {
+    repositories {
+        maven {
+            allowInsecureProtocol = true
+            url = "https://github.com/qinglianmatt/pluginDemo"
+            credentials {
+                username = "qinglianmatt"
+                password = "3607046Kang"
+            }
+        }
+    }
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = "com.plugin.first"
+            artifactId = "first-plugin"
+            version = "0.0.1"
+            from components.java
+            pom {
+                name = "first-plugin"
+                description = "first-plugin"
+                url = "https://github.com/qinglianmatt/pluginDemo"
+                licenses {
+                    license {
+                        name = "The Apache Software License, Version 2.0"
+                        url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                    }
+                }
+                developers {
+                    developer {
+                        id = "matt"
+                        name = "matt"
+                        email = "matt@163.com"
+                    }
+                }
+            }
+        }
+    }
+}
+
