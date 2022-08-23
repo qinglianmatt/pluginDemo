@@ -4,7 +4,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 
 
-class FistPlugin implements Plugin<Project> {
+class FirstPlugin implements Plugin<Project> {
 
     @Override
     void apply(Project project) {
